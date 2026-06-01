@@ -98,7 +98,6 @@ This project balances developer ergonomics with production performance. Key deci
   - The server is intentionally simple and uses in-memory mock data for fast iterations. Tradeoff: no persistence or horizontal scaling; production would require a database and connection pooling.
   - Added lightweight request logging and error middleware with `X-Request-Id` to trace requests and correlate logs. Tradeoff: console logs are simple but for production you should use a structured logger (e.g., `pino`) and log aggregation.
 
-- Lighthouse & network
-  - Production build aims to keep JS bundles small (tree-shaking, modern target, SWC + esbuild). Additional gains for Lighthouse can be realized by enabling HTTP compression (brotli/gzip), long-term caching, and serving static assets from a CDN.
 
-If you'd like, I can apply the next set of performance improvements: route-level code-splitting, add `pino` for structured logging, enable brotli compression middleware on the server, and produce a Lighthouse report against a production `vite preview` server.
+
+
